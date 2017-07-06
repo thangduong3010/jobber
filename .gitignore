@@ -1,0 +1,4 @@
+jobber.db
+.eggs/
+jobber.egg-info/
+__pycache__/

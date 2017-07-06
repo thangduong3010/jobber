@@ -1,0 +1,3 @@
+graft jobber/templates
+graft jobber/static
+include jobber/schema.sql
