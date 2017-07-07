@@ -5,34 +5,42 @@
         <div class="col-sm-3 col-md-2 sidebar">
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header" style="margin-top: 60px;">Hottest jobs</h1>
+          <h1 class="page-header" style="margin-top: 60px;"></h1>
 
           <div class="row placeholders">
             {% for language in languages %}
                 <div class="col-xs-6 col-sm-3 placeholder">
-                  <img src="{{ url_for('static'), filename='' }}" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                  <img src="" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                   <h4>{{ language }}</h4>
                   <span class="text-muted">Something else</span>
                 </div>
             {% endfor %}
           </div>
 
-          <h2 class="sub-header">Job opening</h2>
+          <h2 class="sub-header">Job Openings</h2>
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-condensed" style="display: block;">
               
-              {% for title in titles %}
-              <thead>
-                <tr>
-                  <th>{{ title }}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                </tr>
-              </tbody>
-              {% endfor %}
+              {% if jobs %}
+                {% for job in jobs %}
+                <thead>
+                    <th><a href="{{ job.url }}">{{ job.title }}</a></th>
+                </thead>
+                <tbody>
+                  <tr>
+                    {% with labels = job.label.split(',') %}
+                    {% for label in labels %}
+                    {% if label %}
+                      <td class="info">{{ label }}</td>
+                    {% endif %}
+                    {% endfor %}
+                    {% endwith %}
+                  </tr>
+                </tbody>
+                {% endfor %}
+              {% else %}
+                <h3>Oops, no jobs found with '{{ keyword }}' keyword. Try again.</h3>
+              {% endif %}
 
             </table>
           </div>

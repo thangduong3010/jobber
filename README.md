@@ -17,7 +17,11 @@ How to use it
 
 `flask initdb`
 
-4. now you can run flaskr:
+4. batch insert into database
+
+`flask batch`
+
+5. now you can run flaskr:
 
 `flask run`
 
@@ -25,7 +29,9 @@ How to use it
 access the app via
 http://localhost:5000/
 
-5. test
+6. Searching button is working!
+
+7. test
 
 No tests yet!
 
