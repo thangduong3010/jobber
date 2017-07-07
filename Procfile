@@ -1,1 +1,1 @@
-web: gunicorn app:jobber
+web: gunicorn manage:jobber
