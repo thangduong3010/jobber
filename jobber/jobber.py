@@ -93,3 +93,7 @@ def index():
     jobs = retrieve_data(sql)
 
     return render_template("index.html", jobs=jobs, keyword=filter_)
+
+
+if __name__ == "__main__":
+    app.run()
