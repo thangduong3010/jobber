@@ -1,1 +1,0 @@
-from .jobber import app

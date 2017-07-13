@@ -3,4 +3,4 @@ jobber.db
 jobber.egg-info/
 __pycache__/
 .fuse*
-insert.sql
+*.pyc
